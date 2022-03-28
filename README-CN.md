@@ -3,7 +3,7 @@ Terraform module which creates ApsaraDB for ClickHouse resources with `Clickhous
 terraform-alicloud-clickhouse
 =====================================================================
 
-[English](README.md) | 简体中文
+[English](https://github.com/terraform-alicloud-modules/terraform-alicloud-clickhouse/blob/main/README.md) | 简体中文
 
 本 Module 用于自动化管理云数据库ClickHouse，包括集群管理、账号管理等，包含：`Clickhouse`。
 
@@ -17,6 +17,8 @@ terraform-alicloud-clickhouse
 ```hcl
 module "example" {
   source                  = "terraform-alicloud-modules/clickhouse/alicloud"
+  #alicloud_click_house_db_cluster
+  create_cluster          = true
   db_cluster_version      = "20.3.10.75"
   category                = "Basic"
   db_cluster_class        = "S8"
@@ -27,6 +29,8 @@ module "example" {
   db_node_storage         = "500"
   storage_type            = "cloud_essd"
   vswitch_id              = "vsw-abc12345"
+  #alicloud_click_house_account
+  create_account          = true
   account_description     = "tf-test-clickhouse-account"
   account_name            = "testaccountname"
   account_password        = "Tf-testpwd"
@@ -46,7 +50,7 @@ module "example" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 1.0.11 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 0.13 |
 | <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.134.0 |
 
 ## Providers

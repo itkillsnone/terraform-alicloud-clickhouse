@@ -28,5 +28,5 @@ Also, you can add more variables files in the folder `tfvars`.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.11 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.134.0 |
