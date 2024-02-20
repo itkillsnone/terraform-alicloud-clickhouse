@@ -10,12 +10,7 @@ variable "create_cluster" {
 variable "db_cluster_version" {
   description = "(Required, ForceNew) The DBCluster version. Valid values: 19.15.2.2, 20.3.10.75, 20.8.7.15."
   type        = string
-  default     = "20.3.10.75"
-
-  validation {
-    condition     = contains(["19.15.2.2", "20.3.10.75", "20.8.7.15"], var.db_cluster_version)
-    error_message = "Allowed values are 19.15.2.2, 20.3.10.75 or 20.8.7.15."
-  }
+  default     = "22.8.5.29"
 }
 
 variable "category" {
