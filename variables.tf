@@ -7,6 +7,15 @@ variable "create_cluster" {
   default     = false
 }
 
+variable "db_cluster_access_white_list" {
+  description = "(Optional) The whitelist of the clickhouse"
+  type        = list(object({
+    db_cluster_ip_array_name = string
+    security_ip_list = string
+  }))
+  default     = []
+}
+
 variable "db_cluster_version" {
   description = "(Required, ForceNew) The DBCluster version. Valid values: 19.15.2.2, 20.3.10.75, 20.8.7.15."
   type        = string

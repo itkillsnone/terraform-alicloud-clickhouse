@@ -26,7 +26,7 @@ module "example" {
 
   #alicloud_click_house_db_cluster
   create_cluster         = true
-  db_cluster_version     = "20.3.10.75"
+  db_cluster_version     = "22.8.5.29"
   category               = "Basic"
   db_cluster_class       = "S8"
   db_cluster_description = var.db_cluster_description
@@ -35,8 +35,7 @@ module "example" {
   db_node_storage        = "500"
   storage_type           = "cloud_essd"
   vswitch_id             = module.vpc.this_vswitch_ids[0]
-
-
+  db_cluster_access_white_list = var.db_cluster_access_white_list
   #alicloud_click_house_account
   create_account      = true
   account_description = var.account_description

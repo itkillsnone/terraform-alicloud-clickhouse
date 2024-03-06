@@ -7,6 +7,15 @@ variable "db_cluster_description" {
   default     = "tf-test-clickhouse"
 }
 
+variable "db_cluster_access_white_list" {
+  description = "(Optional) The whitelist of the clickhouse"
+  type        = list(object({
+    db_cluster_ip_array_name = string
+    security_ip_list = string
+  }))
+  default     = []
+}
+
 #################
 # Click House Account
 #################
