@@ -1,4 +1,9 @@
-## 1.2.0 (Unreleased)
+## 1.3.0 (Unreleased)
+
+## 1.2.0 (2024-03-07)
+
+IMPROVEMENTS:
+- Resource: alicloud_click_house_db_cluster: Support db_cluster_access_white_list. [GH-5](https://github.com/alibabacloud-automation/terraform-alicloud-clickhouse/pull/5)
 
 ## 1.1.1 (2024-02-20)
 
