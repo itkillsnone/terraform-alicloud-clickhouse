@@ -31,4 +31,8 @@ variable "account_password" {
   default     = "Tf-testpwd"
 }
 
-
+variable "account_type" {
+  description = "(Optional, ForceNew) The type of the database account. Valid values: Normal or Super."
+  type        = string
+  default     = "Normal"
+}

@@ -9,3 +9,7 @@ output "this_click_house_db_cluster_status" {
 output "this_click_house_account_name" {
   value = concat(alicloud_click_house_account.account.*.account_name, [""])[0]
 }
+
+output "this_click_house_account_type" {
+  value = concat(alicloud_click_house_account.account.*.type, [""])[0]
+}

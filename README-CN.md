@@ -34,6 +34,7 @@ module "example" {
   account_description     = "tf-test-clickhouse-account"
   account_name            = "testaccountname"
   account_password        = "Tf-testpwd"
+  account_type            = "Normal"
 }
 ```
 

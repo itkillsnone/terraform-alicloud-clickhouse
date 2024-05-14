@@ -10,3 +10,4 @@ db_cluster_access_white_list = [{
 #alicloud_click_house_account
 account_description = "tf-test-update-clickhouse-account"
 account_password    = "Tf-updatetestpwd"
+account_type        = "Super"

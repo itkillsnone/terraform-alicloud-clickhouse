@@ -26,5 +26,6 @@ resource "alicloud_click_house_account" "account" {
   account_description = var.account_description
   account_name        = var.account_name
   account_password    = var.account_password
+  type                = var.account_type
 }
 

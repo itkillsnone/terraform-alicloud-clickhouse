@@ -41,5 +41,6 @@ module "example" {
   account_description = var.account_description
   account_name        = "testaccountname"
   account_password    = var.account_password
-
+  account_type        = var.account_type
+  
 }

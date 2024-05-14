@@ -17,7 +17,7 @@ variable "db_cluster_access_white_list" {
 }
 
 variable "db_cluster_version" {
-  description = "(Required, ForceNew) The DBCluster version. Valid values: 19.15.2.2, 20.3.10.75, 20.8.7.15."
+  description = "(Required, ForceNew) The DBCluster version. Valid values: 19.15.2.2, 20.3.10.75, 20.8.7.15, 22.8.5.29, 23.8."
   type        = string
   default     = "22.8.5.29"
 }
@@ -68,7 +68,7 @@ variable "payment_type" {
 }
 
 variable "db_node_storage" {
-  description = "(Required, ForceNew) The db node storage."
+  description = "(Required) The db node storage."
   type        = string
   default     = ""
 }
@@ -121,4 +121,10 @@ variable "account_password" {
   description = "(Required) The account password: uppercase letters, lowercase letters, lowercase letters, numbers, and special characters (special character! #$%^& author (s):_+-=) in a length of 8-32 bit."
   type        = string
   default     = ""
+}
+
+variable "account_type" {
+  description = "(Optional, ForceNew) The type of the database account. Valid values: Normal or Super."
+  type        = string
+  default     = "Normal"
 }

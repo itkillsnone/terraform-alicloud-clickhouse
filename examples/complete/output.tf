@@ -9,3 +9,8 @@ output "this_click_house_db_cluster_status" {
 output "this_click_house_account_name" {
   value = module.example.this_click_house_account_name
 }
+
+
+output "this_click_house_account_type" {
+  value = module.example.this_click_house_account_type
+}
