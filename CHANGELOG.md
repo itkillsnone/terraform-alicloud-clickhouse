@@ -1,4 +1,9 @@
-## 1.3.0 (Unreleased)
+## 1.4.0 (Unreleased)
+## 1.3.0 (2024-05-14)
+
+IMPROVEMENTS:
+
+- module/alicloud_click_house_account: Added support for creating super account. docs: Improved db_cluster_version description. docs: Improved db_node_storage description. [GH-7](https://github.com/alibabacloud-automation/terraform-alicloud-clickhouse/pull/7)
 
 ## 1.2.0 (2024-03-07)
 
