@@ -9,11 +9,11 @@ variable "create_cluster" {
 
 variable "db_cluster_access_white_list" {
   description = "(Optional) The whitelist of the clickhouse"
-  type        = list(object({
+  type = list(object({
     db_cluster_ip_array_name = string
-    security_ip_list = string
+    security_ip_list         = string
   }))
-  default     = []
+  default = []
 }
 
 variable "db_cluster_version" {
@@ -65,6 +65,24 @@ variable "payment_type" {
     condition     = contains(["PayAsYouGo", "Subscription"], var.payment_type)
     error_message = "Allowed values are PayAsYouGo or Subscription."
   }
+}
+
+variable "renewal_status" {
+  description = "(Optional, Computed) The renewal status of the resource. Valid values: AutoRenewal,Normal. It is valid and required when payment_type is `Subscription`. When `renewal_status` is set to `AutoRenewal`, the resource is renewed automatically."
+  type        = string
+  default     = null
+}
+
+variable "period" {
+  description = "(Optional) Pre-paid cluster of the pay-as-you-go cycle. It is valid and required when payment_type is Subscription. Valid values: Month or Year."
+  type        = string
+  default     = null
+}
+
+variable "used_time" {
+  description = "(Optional) The used time of DBCluster. It is valid and required when payment_type is Subscription. item choices: [1-9] when period is Month, [1-3] when period is Year."
+  type        = string
+  default     = null
 }
 
 variable "db_node_storage" {

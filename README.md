@@ -14,18 +14,47 @@ These types of resources are supported:
 
 ## Usage
 
+Create a "PayAsYouGo" instance:
 ```hcl
 module "example" {
   source                  = "terraform-alicloud-modules/clickhouse/alicloud"
   #alicloud_click_house_db_cluster
   create_cluster          = true
-  db_cluster_version      = "20.3.10.75"
+  db_cluster_version      = "23.8"
   category                = "Basic"
   db_cluster_class        = "S8"
   db_cluster_network_type = "vpc"
   db_cluster_description  = "tf-test-clickhouse"
   db_node_group_count     = 1
   payment_type            = "PayAsYouGo"
+  db_node_storage         = "500"
+  storage_type            = "cloud_essd"
+  vswitch_id              = "vsw-abc12345"
+  #alicloud_click_house_account
+  create_account          = true
+  account_description     = "tf-test-clickhouse-account"
+  account_name            = "testaccountname"
+  account_password        = "Tf-testpwd"
+  account_type            = "Normal"
+}
+```
+
+Create a "Subscription" instance：
+```hcl
+module "example" {
+  source                  = "terraform-alicloud-modules/clickhouse/alicloud"
+  #alicloud_click_house_db_cluster
+  create_cluster          = true
+  db_cluster_version      = "23.8"
+  category                = "Basic"
+  db_cluster_class        = "S8"
+  db_cluster_network_type = "vpc"
+  db_cluster_description  = "tf-test-clickhouse"
+  db_node_group_count     = 1
+  payment_type            = "Subscription"
+  period                  = "Month"
+  used_time               = "1"
+  renewal_status          = "Normal"
   db_node_storage         = "500"
   storage_type            = "cloud_essd"
   vswitch_id              = "vsw-abc12345"
