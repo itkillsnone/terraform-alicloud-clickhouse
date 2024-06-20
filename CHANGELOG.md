@@ -1,4 +1,10 @@
-## 1.4.0 (Unreleased)
+## 1.5.0 (Unreleased)
+## 1.4.0 (2024-06-20)
+
+IMPROVEMENTS:
+
+- module/alicloud_click_house_cluster: Added support for cluster auto renew. [GH-8](https://github.com/alibabacloud-automation/terraform-alicloud-clickhouse/pull/8)
+
 ## 1.3.0 (2024-05-14)
 
 IMPROVEMENTS:
