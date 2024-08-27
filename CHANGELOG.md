@@ -1,4 +1,10 @@
-## 1.5.0 (Unreleased)
+## 1.6.0 (Unreleased)
+## 1.5.0 (2024-08-27)
+
+IMPROVEMENTS:
+
+- resource/alicloud_click_house_db_cluster: Added support for creating multi-zone DBCluster. [GH-9](https://github.com/alibabacloud-automation/terraform-alicloud-clickhouse/pull/9)
+
 ## 1.4.0 (2024-06-20)
 
 IMPROVEMENTS:
