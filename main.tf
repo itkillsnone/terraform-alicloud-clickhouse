@@ -11,6 +11,14 @@ resource "alicloud_click_house_db_cluster" "cluster" {
     }
   }
 
+  dynamic "multi_zone_vswitch_list" {
+    for_each = var.multi_zone_vswitch_list
+    content {
+      zone_id = multi_zone_vswitch_list.value.zone_id
+      vswitch_id = multi_zone_vswitch_list.value.vswitch_id
+    }
+  }
+
   db_cluster_network_type = "vpc"
   db_cluster_description  = var.db_cluster_description
   db_node_group_count     = var.db_node_group_count

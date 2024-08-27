@@ -16,6 +16,15 @@ variable "db_cluster_access_white_list" {
   default = []
 }
 
+variable "multi_zone_vswitch_list" {
+  description = "(Optional) The zone IDs and corresponding vswitch IDs of multi-zone setup"
+  type = list(object({
+    zone_id    = string
+    vswitch_id = string
+  }))
+  default = []
+}
+
 variable "db_cluster_version" {
   description = "(Required, ForceNew) The DBCluster version. Valid values: 19.15.2.2, 20.3.10.75, 20.8.7.15, 22.8.5.29, 23.8."
   type        = string

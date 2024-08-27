@@ -80,3 +80,64 @@ module "example_subscription" {
   account_type        = var.account_type
 
 }
+
+
+resource "alicloud_vpc" "default" {
+  vpc_name   = "testvpc"
+  cidr_block = "192.168.0.0/16"
+}
+
+resource "alicloud_vswitch" "default_1" {
+    vswitch_name = "testvswitch-1"
+    vpc_id       = resource.alicloud_vpc.default.id
+    cidr_block   = "192.168.1.0/24"
+    zone_id      = "cn-beijing-k"
+}
+
+resource "alicloud_vswitch" "default_2" {
+    vswitch_name = "testvswitch-2"
+    vpc_id       = resource.alicloud_vpc.default.id
+    cidr_block   = "192.168.2.0/24"
+    zone_id      = "cn-beijing-l"
+}
+
+resource "alicloud_vswitch" "default_3" {
+    vswitch_name = "testvswitch-3"
+    vpc_id       = resource.alicloud_vpc.default.id
+    cidr_block   = "192.168.3.0/24"
+    zone_id      = "cn-beijing-g"
+}
+
+module "example_multi_zone" {
+  source = "../.."
+
+  #alicloud_click_house_db_cluster
+  create_cluster               = true
+  db_cluster_version           = "23.8"
+  category                     = "Basic"
+  db_cluster_class             = "S8"
+  db_cluster_description       = var.db_cluster_description
+  db_node_group_count          = 1
+  payment_type                 = "PayAsYouGo"
+  db_node_storage              = "500"
+  storage_type                 = "cloud_essd"
+  vswitch_id                   = resource.alicloud_vswitch.default_1.id
+  multi_zone_vswitch_list = [
+    {
+      zone_id = resource.alicloud_vswitch.default_2.zone_id
+      vswitch_id = resource.alicloud_vswitch.default_2.id
+    },
+    {
+      zone_id = resource.alicloud_vswitch.default_3.zone_id
+      vswitch_id = resource.alicloud_vswitch.default_3.id
+    }
+  ]
+  db_cluster_access_white_list = var.db_cluster_access_white_list
+  #alicloud_click_house_account
+  create_account      = true
+  account_description = var.account_description
+  account_name        = "testaccountname"
+  account_password    = var.account_password
+  account_type        = var.account_type
+
+}
