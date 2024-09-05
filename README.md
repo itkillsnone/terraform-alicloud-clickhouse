@@ -75,8 +75,8 @@ module "example_multi_zone" {
   #alicloud_click_house_db_cluster
   create_cluster               = true
   db_cluster_version           = "23.8"
-  category                     = "Basic"
-  db_cluster_class             = "S8"
+  category                     = "HighAvailability"
+  db_cluster_class             = "C8"
   db_cluster_description       = "tf-test-clickhouse"
   db_node_group_count          = 1
   payment_type                 = "PayAsYouGo"
