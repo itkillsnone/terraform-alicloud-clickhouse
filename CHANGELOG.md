@@ -1,4 +1,8 @@
-## 1.7.0 (Unreleased)
+## 1.8.0 (Unreleased)
+## 1.7.0 (2025-03-18)
+
+- module: add variables allocate_public_connection, resource_group_id and cold_storage for resource alicloud_click_house_db_cluster [GH-12](https://github.com/alibabacloud-automation/terraform-alicloud-clickhouse/pull/12)
+
 ## 1.6.0 (2024-09-05)
 
 IMPROVEMENTS:
