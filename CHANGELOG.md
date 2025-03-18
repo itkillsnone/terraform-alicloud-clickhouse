@@ -1,4 +1,11 @@
-## 1.6.0 (Unreleased)
+## 1.7.0 (Unreleased)
+## 1.6.0 (2024-09-05)
+
+IMPROVEMENTS:
+
+- examples/complete: improve multi-zone instance. [GH-11](https://github.com/alibabacloud-automation/terraform-alicloud-clickhouse/pull/11)
+
+
 ## 1.5.0 (2024-08-27)
 
 IMPROVEMENTS:
