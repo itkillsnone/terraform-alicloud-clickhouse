@@ -117,6 +117,29 @@ variable "vswitch_id" {
   default     = ""
 }
 
+variable "resource_group_id" {
+  description = "(Optional) The ID of the resource group."
+  type        = string
+  default     = null
+}
+
+variable "allocate_public_connection" {
+  description = "(Optional) Whether to enable public connection. Value options: `true`, `false`."
+  type        = bool
+  default     = false
+}
+
+variable "cold_storage" {
+  description = "(Optional) Whether to use cold storage. Valid values: `ENABLE`, `DISABLE`, default to `DISABLE`. When it's set to `ENABLE`, cold storage will be used, and `cold_storage` cannot be set to `DISABLE` again."
+  type        = string
+  default     = "DISABLE"
+
+  validation {
+    condition     = contains(["DISABLE", "ENABLE"], var.cold_storage)
+    error_message = "Allowed values are DISABLE or ENABLE."
+  }
+}
+
 #################
 # Click House Account
 #################
